@@ -3,3 +3,7 @@
 html {
    scroll-behavior: smooth;
 }
+
+#nav_shadow {
+   box-shadow: 3px 3px 6px rgba(0,0,0,0.08) inset, -3px -3px 6px rgba(0,0,0,0.08) inset;
+}
