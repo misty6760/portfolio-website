@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import emailModule from '$lib/components/contact_email.js';
+	import profileImg from '$lib/assets/profile.svg';
+	import mouseCursor from '$lib/assets/mouse-cursor.svg';
 
 	let emailLink = '';
 	const today = new Date();
@@ -58,7 +60,7 @@
 					class="h-55 w-55 mx-auto flex aspect-square items-center justify-center overflow-hidden rounded-full border-4 border-gray-200 shadow-lg dark:border-gray-700"
 				>
 					<img
-						src="src/lib/assets/profile.svg"
+						src={profileImg}
 						alt="profil_logo"
 						class="h-45 w-45 mt-10 object-contain p-2"
 					/>
@@ -73,7 +75,7 @@
 			<div class="bg-linear-to-b min-h-50 flex max-h-screen items-center justify-center">
 				<a href="#about" class="bottom-30 absolute left-1/2 -translate-x-1/2">
 					<img
-						src="src/lib/assets/mouse-cursor.svg"
+						src={mouseCursor}
 						alt="Scroll down"
 						class="h-16 w-16 transform transition duration-300 ease-out hover:translate-y-5"
 					/>
