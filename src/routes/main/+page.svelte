@@ -3,18 +3,22 @@
 	import emailModule from '$lib/components/contact_email.js';
 	import profileImg from '$lib/assets/profile.svg';
 	import mouseCursor from '$lib/assets/mouse-cursor.svg';
+	import { isMobile } from '$lib/components/mobile_nav.js';
 
 	let emailLink = '';
+	let isMobileDevice = false;
 	const today = new Date();
 
 	onMount(() => {
 		// 초기화
 		emailModule.initEmailLink();
 		emailLink = emailModule.getEmailLink();
+		isMobileDevice = isMobile();
 
 		// resize 시 반응형 업데이트
 		const updateLink = () => {
 			emailLink = emailModule.getEmailLink();
+			isMobileDevice = isMobile();
 		};
 
 		window.addEventListener('resize', updateLink);
@@ -59,11 +63,7 @@
 				<div
 					class="h-55 w-55 mx-auto flex aspect-square items-center justify-center overflow-hidden rounded-full border-4 border-gray-200 shadow-lg dark:border-gray-700"
 				>
-					<img
-						src={profileImg}
-						alt="profil_logo"
-						class="h-45 w-45 mt-10 object-contain p-2"
-					/>
+					<img src={profileImg} alt="profil_logo" class="h-45 w-45 mt-10 object-contain p-2" />
 				</div>
 			</div>
 			<div>
@@ -73,13 +73,23 @@
 				>
 			</div>
 			<div class="bg-linear-to-b min-h-50 flex max-h-screen items-center justify-center">
-				<a href="#about" class="bottom-30 absolute left-1/2 -translate-x-1/2">
-					<img
-						src={mouseCursor}
-						alt="Scroll down"
-						class="h-16 w-16 transform transition duration-300 ease-out hover:translate-y-5"
-					/>
-				</a>
+				{#if !isMobileDevice}
+					<a href="#about" class="bottom-30 absolute left-1/2 -translate-x-1/2">
+						<img
+							src={mouseCursor}
+							alt="Scroll down"
+							class="h-16 w-16 transform transition duration-300 ease-out hover:translate-y-5"
+						/>
+					</a>
+				{:else}
+					<a href="#about" class="bottom-30 absolute left-1/2 -translate-x-1/2">
+						<img
+							src={mouseCursor}
+							alt="Scroll down"
+							class="h-16 w-16 transform transition duration-300 ease-out active:translate-y-5"
+						/>
+					</a>
+				{/if}
 			</div>
 		</div>
 	</div>
@@ -105,13 +115,13 @@
 				<div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-8 md:gap-6">
 					<div class="rounded-lg bg-gray-600/50 p-3 text-center md:p-4">
 						<p class="text-3xl font-bold text-teal-400">{calcAge()}세</p>
-						<p class="text-xs md:text-sm text-gray-600">고등학생</p>
+						<p class="text-xs text-gray-700 md:text-sm">고등학생</p>
 					</div>
 					<div class="rounded-lg bg-gray-600/50 p-3 text-center md:p-4">
 						<p class="text-3xl font-bold text-teal-400">
 							{calcCareer()}년
 						</p>
-						<p class="text-xs md:text-sm text-gray-600">코딩 공부</p>
+						<p class="text-xs text-gray-700 md:text-sm">코딩 공부</p>
 					</div>
 				</div>
 			</div>
@@ -189,9 +199,7 @@
 		<div class="mx-auto max-w-4xl px-4">
 			<h2 class="mb-8 text-center text-3xl font-bold">Contact</h2>
 			<div class="flex flex-col items-center space-y-4">
-				<a href={emailLink} target="_blank" class="text-gray-900 hover:text-gray-500">
-					kinghojoon12@gmail.com
-				</a>
+				<a href={emailLink} target="_blank" class="text-gray-900 hover:text-gray-500"> Email </a>
 				<div class="flex space-x-6">
 					<a
 						href="https://github.com/misty6760"
