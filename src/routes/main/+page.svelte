@@ -287,7 +287,7 @@
 				</div>
 				<div>
 					<div class="flex items-center justify-center gap-2">
-						<img src="/imgs/discord.svg" alt="discord" class="h-5 w-5" />
+						<img src="/imgs/discord.svg" alt="discord" class="h-7 w-7" />
 						<a
 							href="https://discord.com/users/901664081801535489"
 							target="_blank"

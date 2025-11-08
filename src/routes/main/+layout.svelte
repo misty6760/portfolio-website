@@ -62,9 +62,9 @@
 	<div class="mx-10 flex justify-center">
 		<nav
 			id="nav_shadow"
-			class="backdrop-blur-xs min-w-lvw rounded-4xl fixed top-2 z-50 mt-3 overflow-hidden border-b border-white/10 px-10 transition-all duration-300 ease-in-out {$mobileMenuOpen
+			class="min-w-lvw rounded-4xl bg-linear-135 fixed top-2 z-50 mt-3 overflow-hidden border-b border-white/10 px-10 backdrop-blur-xl transition-all duration-300 ease-in-out {$mobileMenuOpen
 				? 'bg-black/60'
-				: 'bg-white/10'}"
+				: 'bg-white/20'}"
 			style="height: {$mobileMenuOpen ? '300px' : '70px'};"
 		>
 			<div class="mx-auto flex flex-col items-center justify-between p-4">
@@ -123,7 +123,7 @@
 	<div class="flex justify-center">
 		<nav
 			id="nav_shadow"
-			class="backdrop-blur-xs rounded-4xl fixed top-2 z-50 mt-3 w-[99vw] border-b border-white/10 bg-white/10 px-10"
+			class="rounded-4xl bg-linear-135 fixed top-2 z-50 mt-3 w-[99vw] border-b border-white/10 bg-white/20 px-10 backdrop-blur-xl"
 		>
 			<div class="mx-auto flex items-center justify-between p-4">
 				<a href="/main#home">
