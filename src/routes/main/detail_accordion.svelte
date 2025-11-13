@@ -1,15 +1,11 @@
-<!--detail_accordion.svelte-->
 <script>
-	import { createEventDispatcher } from 'svelte';
 	import { slide } from 'svelte/transition';
 	/** 외부에서 제어하고 싶을 때 bind:open 으로 바인딩한다 */
 	export let open = false;
 	/** 헤더에 표시할 문자열 */
 	export let title = '상세 설명';
-	const dispatch = createEventDispatcher();
 	function toggle() {
 		open = !open; // 상태 토글
-		dispatch('toggle', { open }); // 외부에 이벤트 전달 (선택)
 	}
 </script>
 
@@ -25,7 +21,7 @@
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 14 14"
-			class="h-5 w-5 transition-transform duration-200"
+			class="duration-250 h-5 w-5 transition-transform"
 			style="transform: rotate({open ? -90 : 0}deg)"
 		>
 			<!-- 왼쪽을 가리키는 삼각형 -->

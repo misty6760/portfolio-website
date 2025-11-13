@@ -62,11 +62,11 @@
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
 	/>
 </svelte:head>
-<main class="min-h-screen scroll-smooth bg-gray-100">
+<main class="min-h-screen scroll-smooth">
 	<!-- 히어로 섹션 -->
 	<div
 		id="home"
-		class="bg-linear-to-b flex min-h-screen items-center justify-center from-gray-800 to-gray-600 pt-20"
+		class="flex min-h-screen items-center justify-center bg-linear-to-b from-gray-800 to-gray-600 pt-20 dark:from-gray-900 dark:to-gray-800"
 	>
 		<div class="mx-auto max-w-4xl px-6 text-center">
 			<div class="mb-8">
@@ -82,11 +82,11 @@
 			</div>
 			<div>
 				<span
-					class="bg-linear-to-r from-indigo-300 to-purple-300 bg-clip-text text-5xl font-bold text-transparent"
+					class="bg-linear-to-r from-indigo-300 to-purple-300 bg-clip-text text-5xl font-bold text-transparent dark:from-indigo-400 dark:to-purple-400"
 					>Misty6760</span
 				>
 			</div>
-			<div class="bg-linear-to-b min-h-50 flex max-h-screen items-center justify-center">
+			<div class="min-h-50 flex max-h-screen items-center justify-center">
 				{#if !isMobileDevice}
 					<a href="#about" class="bottom-30 absolute left-1/2 -translate-x-1/2">
 						<img
@@ -108,62 +108,83 @@
 		</div>
 	</div>
 	<!-- 정보 섹션 -->
-	<div id="about" class="bg-linear-to-b from-gray-600 to-gray-400 py-20">
+	<div
+		id="about"
+		class="bg-linear-to-b from-gray-600 to-gray-500 py-20 dark:from-gray-800 dark:to-gray-700"
+	>
 		<div class="mx-auto my-28 max-w-3xl px-4">
-			<h2 class="mb-8 text-center text-3xl font-bold">About Me</h2>
+			<h2 class="mb-8 text-center text-3xl font-bold dark:text-white">About Me</h2>
 			<div
-				class="rounded-xl border border-white/10 bg-gray-500/60 p-6 text-center text-black drop-shadow-xl"
+				class="rounded-xl border border-white/10 bg-gray-500/60 p-6 text-center text-black drop-shadow-xl dark:bg-gray-700/60 dark:text-gray-100"
 			>
 				<div class="font-xl mx-auto max-w-3xl text-center">
-					<p class="mb-4 text-base leading-relaxed text-black md:mb-6 md:text-lg">
-						안녕하세요! 개발자 <span class="font-bold text-teal-400">Misty6760</span>입니다.
+					<p
+						class="mb-4 text-base leading-relaxed text-black md:mb-6 md:text-lg dark:text-gray-100"
+					>
+						안녕하세요! 개발자 <span class="font-bold text-teal-400 dark:text-teal-300"
+							>Misty6760</span
+						>입니다.
 					</p>
-					<p>
-						<span class="font-bold duration-200 hover:text-teal-400">프론트엔드</span>,
-						<span class="font-bold duration-200 hover:text-teal-400">임베디드 시스템</span>,
-						<span class="font-bold duration-200 hover:text-teal-400">데이터베이스</span>를 공부하는
-						중입니다!
+					<p class="dark:text-gray-100">
+						<span class="font-bold duration-200 hover:text-teal-400 dark:hover:text-teal-300"
+							>프론트엔드</span
+						>,
+						<span class="font-bold duration-200 hover:text-teal-400 dark:hover:text-teal-300"
+							>임베디드 시스템</span
+						>,
+						<span class="font-bold duration-200 hover:text-teal-400 dark:hover:text-teal-300"
+							>데이터베이스</span
+						>를 공부하는 중입니다!
 					</p>
 				</div>
 				<div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-8 md:gap-6">
-					<div class="rounded-lg bg-gray-600/50 p-3 text-center md:p-4">
-						<p class="text-3xl font-bold text-teal-400">{calcAge()}세</p>
-						<p class="text-xs text-gray-700 md:text-sm">고등학생</p>
+					<div class="rounded-lg bg-gray-600/50 p-3 text-center md:p-4 dark:bg-gray-800/50">
+						<p class="text-3xl font-bold text-teal-400 dark:text-teal-300">{calcAge()}세</p>
+						<p class="text-xs text-gray-700 md:text-sm dark:text-gray-300">고등학생</p>
 					</div>
-					<div class="rounded-lg bg-gray-600/50 p-3 text-center md:p-4">
-						<p class="text-3xl font-bold text-teal-400">
+					<div class="rounded-lg bg-gray-600/50 p-3 text-center md:p-4 dark:bg-gray-800/50">
+						<p class="text-3xl font-bold text-teal-400 dark:text-teal-300">
 							{calcCareer()}년
 						</p>
-						<p class="text-xs text-gray-700 md:text-sm">코딩 공부</p>
+						<p class="text-xs text-gray-700 md:text-sm dark:text-gray-300">코딩 공부</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- 스킬 섹션 -->
-	<div id="skills" class="bg-gray-400 py-40">
+	<div
+		id="skills"
+		class="bg-linear-to-b from-gray-500 to-gray-400 py-40 dark:from-gray-700 dark:to-gray-600"
+	>
 		<div class="mx-auto my-28 max-w-3xl px-4">
-			<h2 class="mb-8 text-center text-3xl font-bold">Skills</h2>
-			<div class="grid grid-cols-3 gap-8 md:grid-cols-3">
-				<div class="rounded-lg bg-gray-300 p-4 px-8 shadow-lg transition-transform hover:scale-105">
-					<h3 class="mb-2 text-xl font-bold">Frontend</h3>
-					<ul class="list-inside list-disc text-black">
+			<h2 class="mb-8 text-center text-3xl font-bold dark:text-white">Skills</h2>
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+				<div
+					class="rounded-lg bg-gray-300 p-4 px-8 shadow-lg transition-transform hover:scale-105 dark:bg-gray-700"
+				>
+					<h3 class="mb-2 text-xl font-bold dark:text-white">Frontend</h3>
+					<ul class="list-inside list-disc text-black dark:text-gray-200">
 						<li>HTML/CSS</li>
 						<li>JavaScript</li>
 						<li>Svelte</li>
 					</ul>
 				</div>
-				<div class="rounded-lg bg-gray-300 p-4 px-8 shadow-lg transition-transform hover:scale-105">
-					<h3 class="mb-2 text-xl font-bold">Coding</h3>
-					<ul class="list-inside list-disc text-black">
+				<div
+					class="rounded-lg bg-gray-300 p-4 px-8 shadow-lg transition-transform hover:scale-105 dark:bg-gray-700"
+				>
+					<h3 class="mb-2 text-xl font-bold dark:text-white">Coding</h3>
+					<ul class="list-inside list-disc text-black dark:text-gray-200">
 						<li>Python</li>
 						<li>C / C++</li>
 					</ul>
 				</div>
-				<div class="rounded-lg bg-gray-300 p-4 px-8 shadow-lg transition-transform hover:scale-105">
-					<h3 class="mb-2 text-xl font-bold">Database</h3>
-					<div class="list-inside list-disc text-black">
-						<ul class="list-inside list-disc text-black">
+				<div
+					class="rounded-lg bg-gray-300 p-4 px-8 shadow-lg transition-transform hover:scale-105 dark:bg-gray-700"
+				>
+					<h3 class="mb-2 text-xl font-bold dark:text-white">Database</h3>
+					<div class="list-inside list-disc text-black dark:text-gray-200">
+						<ul class="list-inside list-disc text-black dark:text-gray-200">
 							<li>SQLite</li>
 						</ul>
 					</div>
@@ -174,14 +195,14 @@
 	</div>
 	<!-- 프로젝트 섹션 -->
 	<Toast />
-	<div id="projects" class="bg-gray-400 py-60">
+	<div id="projects" class="bg-gray-400 py-60 dark:bg-gray-600">
 		<div class="mx-auto max-w-6xl px-4">
-			<h2 class="mb-8 text-center text-3xl font-bold">Projects</h2>
-			<div class="grid grid-cols-3 items-start gap-8 md:grid-cols-3">
+			<h2 class="mb-8 text-center text-3xl font-bold dark:text-white">Projects</h2>
+			<div class="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
 				<div
-					class="overflow-hidden rounded-lg bg-gray-300 p-4 shadow-lg duration-300 hover:scale-105"
+					class="overflow-hidden rounded-lg bg-gray-300 p-4 shadow-lg duration-300 hover:scale-105 dark:bg-gray-700"
 				>
-					<h3 class="mb-2 text-xl font-bold">🧱 방화벽 프로젝트</h3>
+					<h3 class="mb-2 text-xl font-bold dark:text-white">🧱 방화벽 프로젝트</h3>
 					<!-- 상세 설명만 토글 -->
 					<DetailAccordion bind:open={showFirewall}>
 						<ul class="list-inside list-disc space-y-2 pl-5">
@@ -189,20 +210,23 @@
 						</ul>
 					</DetailAccordion>
 					<div class="mt-1">
-						<p>상태: <span class="font-bold text-green-700">완료</span></p>
+						<p class="dark:text-gray-200">
+							상태: <span class="font-bold text-green-700 dark:text-green-400">완료</span>
+						</p>
 					</div>
 					<div class="flex space-x-4">
 						<a
 							href="https://github.com/misty6760/Firewall-Projecte"
 							target="_blank"
-							class="transform-all text-black duration-200 hover:text-black/50">Github</a
+							class="transform-all text-black duration-200 hover:text-black/50 dark:text-gray-200 dark:hover:text-gray-400"
+							>Github</a
 						>
 					</div>
 				</div>
 				<div
-					class="transform-all overflow-hidden rounded-lg bg-gray-300 p-4 shadow-lg duration-200 hover:scale-105"
+					class="transform-all overflow-hidden rounded-lg bg-gray-300 p-4 shadow-lg duration-200 hover:scale-105 dark:bg-gray-700"
 				>
-					<h3 class="mb-2 text-xl font-bold">🌥️ 날씨 친구</h3>
+					<h3 class="mb-2 text-xl font-bold dark:text-white">🌥️ 날씨 친구</h3>
 					<DetailAccordion bind:open={showWeather}>
 						<ul class="list-inside list-disc space-y-2 pl-5">
 							<li class="ml-2 -indent-5">
@@ -219,20 +243,23 @@
 						</ul>
 					</DetailAccordion>
 					<div class="mt-1">
-						<p>상태: <span class="font-bold text-green-700">완료</span></p>
+						<p class="dark:text-gray-200">
+							상태: <span class="font-bold text-green-700 dark:text-green-400">완료</span>
+						</p>
 					</div>
 					<div class="flex space-x-4">
 						<a
 							href="https://github.com/misty6760/Weather-Mate"
 							target="_blank"
-							class="transform-all text-black duration-200 hover:text-black/50">Github</a
+							class="transform-all text-black duration-200 hover:text-black/50 dark:text-gray-200 dark:hover:text-gray-400"
+							>Github</a
 						>
 					</div>
 				</div>
 				<div
-					class="transform-all overflow-hidden rounded-lg bg-gray-300 p-4 shadow-lg duration-200 hover:scale-105"
+					class="transform-all overflow-hidden rounded-lg bg-gray-300 p-4 shadow-lg duration-200 hover:scale-105 dark:bg-gray-700"
 				>
-					<h3 class="mb-2 text-xl font-bold">액자형 공기청정기</h3>
+					<h3 class="mb-2 text-xl font-bold dark:text-white">액자형 공기청정기</h3>
 					<DetailAccordion bind:open={showAir}>
 						<ul class="list-inside list-disc space-y-2 pl-5">
 							<li class="ml-2 -indent-5">액자식 공기청정기를 라즈베리파이로 제작하였습니다.</li>
@@ -246,11 +273,13 @@
 						</ul>
 					</DetailAccordion>
 					<div class="mt-1">
-						<p>상태: <span class="font-bold text-red-700">미완성</span></p>
+						<p class="dark:text-gray-200">
+							상태: <span class="font-bold text-red-700 dark:text-red-400">미완성</span>
+						</p>
 					</div>
 					<div class="flex space-x-4">
 						<button
-							class="text-gray-900 transition-colors hover:cursor-pointer hover:text-gray-500"
+							class="text-gray-900 transition-colors hover:cursor-pointer hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
 							on:click={showLinkMessage}
 						>
 							관련 링크 없음
@@ -261,16 +290,16 @@
 		</div>
 	</div>
 	<!-- 연락처 섹션 -->
-	<div id="contact" class="bg-gray-400 py-40">
+	<div id="contact" class="bg-gray-400 py-40 dark:bg-gray-600">
 		<div class="mx-auto max-w-4xl px-4">
-			<h2 class="mb-8 text-center text-3xl font-bold">Contact</h2>
+			<h2 class="mb-8 text-center text-3xl font-bold dark:text-white">Contact</h2>
 			<div class="flex flex-col items-center justify-center space-y-4 md:grid-cols-2">
 				<div class="flex items-center justify-center gap-2">
 					<Mail />
 					<a
 						href={emailLink}
 						target="_blank"
-						class="text-xl font-bold text-gray-900 hover:text-gray-500"
+						class="text-xl font-bold text-gray-900 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
 					>
 						Email
 					</a>
@@ -281,7 +310,8 @@
 						<a
 							href="https://github.com/misty6760"
 							target="_blank"
-							class="text-xl font-bold text-gray-900 hover:text-gray-500">GitHub</a
+							class="text-xl font-bold text-gray-900 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
+							>GitHub</a
 						>
 					</div>
 				</div>
@@ -291,7 +321,8 @@
 						<a
 							href="https://discord.com/users/901664081801535489"
 							target="_blank"
-							class="text-xl font-bold text-gray-700 hover:text-gray-500">Discord</a
+							class="text-xl font-bold text-gray-700 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
+							>Discord</a
 						>
 					</div>
 				</div>
