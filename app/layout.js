@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import Nav from '@/components/nav/Nav';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -26,11 +27,15 @@ export default function RootLayout({ children }) {
 		<html lang="ko" className={inter.variable}>
 			<head>
 				<meta name="naver-site-verification" content="b2b312a7dfe81100d7893247fa9b6d29fda95084" />
-				<meta name="google-site-verification" content="MBoj6hKvAKFle602kZORdUkT7hrYkKWearSyGvV67s4" />
+				<meta
+					name="google-site-verification"
+					content="MBoj6hKvAKFle602kZORdUkT7hrYkKWearSyGvV67s4"
+				/>
 			</head>
 			<body>
 				<Nav />
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	);
