@@ -63,4 +63,3 @@ npm run dev
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 This project is licensed under the [MIT License](LICENSE).
-

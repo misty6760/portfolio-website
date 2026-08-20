@@ -1,10 +1,18 @@
 import MainContent from './MainContent';
-import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
 	title: 'FELNUT | 프론트엔드 · 임베디드 개발자 포트폴리오',
-	description: 'FELNUT의 개발자 포트폴리오입니다. 프론트엔드, 임베디드 시스템, 데이터베이스를 공부하며 제작한 다양한 프로젝트와 기술을 소개합니다.',
-	keywords: ['FELNUT', '개발자 포트폴리오', '프론트엔드 개발자', '임베디드 시스템', '웹 개발', '프로그래밍', '데이터베이스'],
+	description:
+		'FELNUT의 개발자 포트폴리오입니다. 프론트엔드, 임베디드 시스템, 데이터베이스를 공부하며 제작한 다양한 프로젝트와 기술을 소개합니다.',
+	keywords: [
+		'FELNUT',
+		'개발자 포트폴리오',
+		'프론트엔드 개발자',
+		'임베디드 시스템',
+		'웹 개발',
+		'프로그래밍',
+		'데이터베이스'
+	],
 	authors: [{ name: 'FELNUT' }],
 	alternates: {
 		canonical: 'https://felnut.kro.kr/'
@@ -57,8 +65,10 @@ const jsonLd = {
 export default function HomePage() {
 	return (
 		<>
-			<Analytics/>
-			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			<MainContent />
 		</>
 	);
